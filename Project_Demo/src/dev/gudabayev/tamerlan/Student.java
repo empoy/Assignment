@@ -14,7 +14,7 @@ public class Student {
 	private static String ID;
 	private static float GPA;
 	static Scanner keyboard = new Scanner(System.in);
-	static ArrayList<Student> students = new ArrayList<Student>();
+	
 	
 	static PrintWriter studentFile = null; {
 	try {
@@ -59,6 +59,7 @@ public class Student {
 	
 	public static void addStudent() 
 	{
+		ArrayList<Student> students = new ArrayList<Student>();
 		System.out.println("Input Student Info: Name, Surname, ID, GPA");
 		Student tempStu = new Student(keyboard.next(), keyboard.next(), keyboard.next(), keyboard.nextFloat());
 		students.add(tempStu);
@@ -67,10 +68,7 @@ public class Student {
 		{
 			
 			studentFile.println("Name:" + students.get(i).getName() +" " + students.get(i).getSurname() 
-					+ " " +  "ID: " + students.get(i).getID() + " " + "GPA: " + students.get(i).getGPA() + "\n");
-			System.out.println(students.get(0).getName());
-			System.out.println(students.size());
-			
+					+ " " +  "ID: " + students.get(i).getID() + " " + "GPA: " + students.get(i).getGPA() + "\n");			
 		}
 			
 			studentFile.close();
