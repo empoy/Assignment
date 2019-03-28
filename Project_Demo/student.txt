@@ -1,6 +1,6 @@
-Name:t t ID: t GPA: 2.3
-
-Name:f f ID: f GPA: 2.1
-
-Name:f f ID: f GPA: 2.1
-
+Tamerlan g g 2.3
+Osama a a 3.3
+Tamer g g 2.3
+osama f f 3.2
+t t t 3.2
+osama f f 3.2

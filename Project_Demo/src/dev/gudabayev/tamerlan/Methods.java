@@ -11,7 +11,7 @@ public class Methods {
 
 	
 	//This methods is used at the beginning of the program.
-	public static void Lanuch() 
+	public static void Lanuch() throws FileNotFoundException 
 	{
 		Scanner keyboard = new Scanner(System.in);
 		int numberForMenu;
@@ -20,8 +20,8 @@ public class Methods {
 		System.out.println("What would you like to do? \n" 
 				 + "1)Add "
 				 + "2)Show " + "3)Update \n"
-				 + "4)Delete " + "5)Show GPA "
-				 + "6)Close");
+				 + "4)Delete " + "5)Show GPA"
+				 + " 6)Close");
 		
 		do {
 			numberForMenu = keyboard.nextInt();
@@ -40,7 +40,7 @@ public class Methods {
 		
 	}
 	
-	public static void Menu(int n) {
+	public static void Menu(int n) throws FileNotFoundException {
 		switch(n) {
 			case 1: 
 				Student.addStudent();
