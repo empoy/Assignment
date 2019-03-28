@@ -13,10 +13,10 @@ import java.util.Scanner;
 
 public class Student {
 	
-	private static String name;
-	private static String Surname;
-	private static String ID;
-	private static float GPA;
+	private  String name;
+	private  String Surname;
+	private  String ID;
+	private  float GPA;
 	static Scanner keyboard = new Scanner(System.in);
 	
 	
@@ -36,7 +36,7 @@ public class Student {
 	
 	
 	public Student(String name, String surname, String iD, float gPA) {
-		Student.name = name;
+		this.name = name;
 		Surname = surname;
 		ID = iD;
 		GPA = gPA;
@@ -45,7 +45,7 @@ public class Student {
 		return name;
 	}
 	public void setName(String name) {
-		Student.name = name;
+		this.name = name;
 	}
 	public String getSurname() {
 		return Surname;
@@ -86,13 +86,16 @@ public class Student {
 	{
 		Scanner reader = new Scanner(file);
 		ArrayList<Student> students = new ArrayList<Student>();
-		
+		String [] split;
+		String temp;
 		if(reader.hasNext()) {
 			while(reader.hasNext()) 
 			{
-			students.add(new Student(reader.next(), reader.next(), reader.next(), reader.nextFloat()));
+				temp=reader.nextLine();
+				split=temp.split(" ");
+				students.add(new Student(split[0], split[1], split[2], Float.parseFloat(split[3])));
+			//students.add(new Student(reader.next(), reader.next(), reader.next(), reader.nextFloat()));
 			}
-			
 			for(int i = 0; i < students.size(); i++)
 			{
 				System.out.println(students.get(i).getSurname());
@@ -103,8 +106,8 @@ public class Student {
 			System.out.println("Your File is Empty");
 		}
 		
-	
-		String SearchID;
+		reader.close();
+		//String SearchID;
 		//System.out.println("Enter Students ID");
 		//SearchID = keyboard.next();
 	}
@@ -121,4 +124,3 @@ public class Student {
 	}
 
 }
-
