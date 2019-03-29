@@ -1,6 +1,5 @@
 package dev.gudabayev.tamerlan;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -184,11 +183,12 @@ public class Student {
 		
 		System.out.println("Are you sure you want to delete this student? y/n");
 		answer = keyboard.nextLine();
-		if(answer.equals("y") || answer.equals("Y")) {
+		if(answer.equals("y") || answer.equals("Y")) 
+		{
 			students.remove(index);
-			file.delete();
-			file.createNewFile();
-			
+			//file.delete();
+			//file.createNewFile();
+			studentFile = new PrintWriter(new FileWriter(file, false));
 			
 			int counter = 0;
 			while(counter < students.size())
@@ -214,4 +214,3 @@ public class Student {
 	}
 
 }
-
